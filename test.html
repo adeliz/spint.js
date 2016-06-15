@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script src="spint.js"></script>
+</head>
+<body>
+	<div id='myDiv'></div>
+	<script>
+		
+		var power=1
+	    var smoothing=0
+
+	    //Creating some data, with each coodinate and the values stored in separated lists
+	    var data = [[1,6,4,7,1,5,2,7,3,6],[1,2,3,3,4,5,6,7,8,9],[1,2,2,3,4,6,7,7,8,10]];
+		var text = ["BH101","BH102","BH103","BH104","BH105","BH106","BH107","BH108","BH109","BH110"];
+		var grid = {
+			x0:-2,
+			y0:-2,
+			xcellsize:1,
+			ycellsize:1,
+			xcellcount:12,
+			ycellcount:12,
+			getXs:function(){
+				var xs=[];
+				for(var i=1;i<=this.xcellcount;i++){
+					xs.push(this.x0+i*this.xcellsize);
+				}
+				return xs;
+			},
+			getYs:function(){
+				var ys=[];
+				for(var i=1;i<=this.ycellcount;i++){
+					ys.push(this.y0+i*this.ycellsize);
+				}
+				return ys;
+			}
+		};
+		
+	    var idw = spint.idw(data,grid,power,smoothing);
+	    console.log(idw);
+	    
+	    var data = [{
+    	  z: idw,
+    	  x: grid.getXs(),
+    	  y: grid.getYs(),
+    	  type: 'contour',
+    	  contours: {
+    		    coloring: 'heatmap'
+    		  }
+    	},
+    	{
+    		  x: data[0],
+    		  y: data[1],
+    		  text: text,
+    		  textposition: 'top center',
+    		  mode: 'markers+text',
+    		  type: 'scatter',
+    		  textfont:{
+    			  color:"#FFF"
+    		  }
+    		}];
+
+    	var layout = {
+    		width:600,
+    		height:600,
+    		title: 'Inverse distance Weighting (IDW) interpolation'
+    	};
+
+    	Plotly.newPlot('myDiv', data, layout);
+	</script>
+</body>
+</html>
