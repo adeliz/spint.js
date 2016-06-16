@@ -26,7 +26,7 @@ function pointValue(x,y,power,smoothing,data){
     return value;
 }
 
-spint.idw = function (data,grid,power,smoothing){
+idw = function (data,grid,power,smoothing){
 	var valuesGrid = [];
     for(var i=1;i<=grid.xcellcount;i++){
     	var yvalues = [];
@@ -36,4 +36,8 @@ spint.idw = function (data,grid,power,smoothing){
     	valuesGrid.push(yvalues);
     }		            
     return valuesGrid;
+}
+
+module.exports = {
+	idw : idw
 }

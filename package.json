@@ -1,0 +1,23 @@
+{
+	"name": "turf",
+	"version": "0.0.1",
+	"description": "a node.js library for performing spatial interpolations",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/adeliz/spint.js.git"
+	},
+	"keywords": [
+		"spatial",
+		"interpolation",
+		"inverse distance weighting",
+		"idw",
+		"analysis"
+	],
+	"author": "adelise",
+	"license": "MIT",
+	"devDependencies": {
+		"browserify": "^13.0.0",
+		"uglify-js": "~2.4.16"
+	}
+}
