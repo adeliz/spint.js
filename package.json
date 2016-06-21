@@ -1,5 +1,5 @@
 {
-	"name": "turf",
+	"name": "spint",
 	"version": "0.0.1",
 	"description": "a node.js library for performing spatial interpolations",
 	"main": "index.js",
@@ -19,5 +19,10 @@
 	"devDependencies": {
 		"browserify": "^13.0.0",
 		"uglify-js": "~2.4.16"
+	},
+	"scripts": {
+		"test": "browserify spint.js --s spint | uglifyjs > spint.min.js",
+		"bee": "beefy spint.js:spint.min.js --browserify spint.js --s spint spint.min.js",
+		"wa": "watchify spint.js --s spint -o spint.min.js -v"
 	}
 }

@@ -12,11 +12,11 @@
 	    var smoothing=0
 
 	    //Creating some data, with each coodinate and the values stored in separated lists
-	    var data = [[1,6,4,7,1,5,2,7,3,6],[1,2,3,3,4,5,6,7,8,9],[1,2,2,3,4,6,7,7,8,10]];
+	    var data = [[1,6,4,7,1,5,2,7,3,6],[101,102,103,103,104,105,106,107,108,109],[1,2,2,3,4,6,7,7,8,10]];
 		var text = ["BH101","BH102","BH103","BH104","BH105","BH106","BH107","BH108","BH109","BH110"];
 		var grid = {
 			x0:-2,
-			y0:-2,
+			y0:98,
 			xcellsize:1,
 			ycellsize:1,
 			xcellcount:12,
@@ -64,7 +64,7 @@
     	var layout = {
     		width:600,
     		height:600,
-    		title: 'Inverse distance Weighting (IDW) interpolation'
+    		title: 'Inverse distance Weighting (IDW) interpolation dd'
     	};
 
     	Plotly.newPlot('myDiv', data, layout);

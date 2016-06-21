@@ -31,7 +31,7 @@ idw = function (data,grid,power,smoothing){
     for(var i=1;i<=grid.xcellcount;i++){
     	var yvalues = [];
     	for(var j=1;j<=grid.ycellcount;j++){
-    		yvalues.push(pointValue(grid.y0+j*grid.xcellsize,grid.x0+i*grid.xcellsize,power,smoothing,data));
+    		yvalues.push(pointValue(grid.x0+j*grid.xcellsize,grid.y0+i*grid.ycellsize,power,smoothing,data));
     	}
     	valuesGrid.push(yvalues);
     }		            

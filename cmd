@@ -1,1 +1,0 @@
-browserify spint.js --s spint | uglifyjs > spint.min.js
