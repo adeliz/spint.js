@@ -21,8 +21,8 @@
 		"uglify-js": "~2.4.16"
 	},
 	"scripts": {
-		"test": "browserify spint.js --s spint | uglifyjs > spint.min.js",
-		"bee": "beefy spint.js:spint.min.js --browserify spint.js --s spint spint.min.js",
-		"wa": "watchify spint.js --s spint -o spint.min.js -v"
+		"test": "browserify index.js --s spint | uglifyjs > spint.min.js",
+		"bee": "beefy index.js:spint.min.js --browserify index.js --s spint spint.min.js",
+		"wa": "watchify index.js --s spint -o spint.min.js -v"
 	}
 }
